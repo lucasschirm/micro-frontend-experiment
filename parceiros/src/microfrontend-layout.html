@@ -1,0 +1,42 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+  <section class="py-4 px-4 flex border-b border-gray-light">
+    <span class="mr-4">Gestão de Parceiros</span>
+    <span class="mr-4">|</span>
+    <a href="/dashboard">Painel de controle</a>
+    <span class="mx-4">|</span>
+    <a href="/parceiros">Parceiros</a>
+
+    <a href="/" class="justify-self-end">Sair</a>
+  </section>
+  <main>
+    <route default>
+      <application name="@parceiros/parceiros-login"></application>
+    </route> 
+    <route path="dashboard">
+      <application name="@parceiros/parceiros-dashboard"></application>
+    </route>
+    <route path="parceiros">
+      <application name="@parceiros/parceiros-management"></application>
+    </route>
+    <route path="welcome">
+      <application name="@single-spa/welcome"></application>
+    </route>
+  </main>
+</single-spa-router>
